@@ -10,8 +10,8 @@
 
 Vui lòng tham khảo các tài liệu sau:
 
-* **README_EN.md**: Detailed documentation in English
-* **README_VImd**: Tài liệu chi tiết tiếng Việt
+* [**README_EN.md**](https://github.com/nhuthangl24/checkmk-network-monitoring/blob/main/README_EN.md) : Detailed documentation in English
+* [**README_VI.md**](https://github.com/nhuthangl24/checkmk-network-monitoring/blob/main/README_VI.md) : Tài liệu chi tiết tiếng Việt
 
 ## Phạm vi dự án
 
