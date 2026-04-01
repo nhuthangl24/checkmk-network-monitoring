@@ -1,68 +1,61 @@
-# checkmk-network-monitoring
+# Hệ thống Giám sát Mạng CHECKMK
 
-## Tổng quan dự án
+# Mục tiêu
 
-Dự án xây dựng hệ thống giám sát hạ tầng mạng và dịch vụ quy mô doanh nghiệp sử dụng **Checkmk**, phục vụ bài tập lớn cuối kỳ.
+* Giám sát hạ tầng mạng và dịch vụ
+* Phát hiện sự cố và cảnh báo kịp thời
+* Phân tích hiệu năng mạng và hệ thống
+* Hỗ trợ báo cáo SLA và phản ứng sự cố
 
-Hệ thống không chỉ giám sát thiết bị mạng mà còn theo dõi máy chủ, dịch vụ, hiệu năng và cảnh báo sự cố theo thời gian thực.
+# Thành phần hệ thống
 
-## Sơ đồ hoạt động
+* **Checkmk Server**: Engine giám sát, rules, alerts, báo cáo, SLA
+* **Thiết bị mạng**: Router, Switch, Firewall, Access Point
+* **Hệ thống dịch vụ**: Web Server, Database, DNS, SSH, Mail, File Server
+* **Chỉ số hiệu năng**: Băng thông, lỗi gói tin, CPU, RAM, Disk, Process, Service
+* **Cảnh báo & Phân tích**: Email / Telegram / Logs, downtime, root cause
 
-```text
-                          +----------------------+
-                          |    Người quản trị    |
-                          | Dashboard / Alerts   |
-                          +----------+-----------+
-                                     |
-                                     v
-                     +-----------------------------------+
-                     |          Checkmk Server           |
-                     | Monitoring + Rules + Alerts       |
-                     | Reports + SLA + Event Handling    |
-                     +----------+------------+-----------+
-                                |            |
-                    ------------             -------------
-                   /                                         \
-                  v                                           v
-        +---------------------+                    +----------------------+
-        |   Thiết bị mạng     |                    |   Hệ thống dịch vụ   |
-        | Router / Switch     |                    | Web / DB / DNS / SSH |
-        | Firewall / AP       |                    | Mail / File Server   |
-        +----------+----------+                    +----------+-----------+
-                   |                                          |
-                   v                                          v
-        +---------------------+                    +----------------------+
-        | Hiệu năng mạng      |                    | Hiệu năng hệ thống   |
-        | Bandwidth / Packet  |                    | CPU / RAM / Disk     |
-        | Interface Errors    |                    | Process / Service    |
-        +---------------------+                    +----------------------+
-                                \                /
-                                 \              /
-                                  v            v
-                         +---------------------------+
-                         |  Cảnh báo & Phân tích     |
-                         | Email / Telegram / Logs   |
-                         | Downtime / Root Cause     |
-                         +---------------------------+
-```
+# Luồng dữ liệu
 
-## Luồng triển khai
+* Lưu lượng và trạng thái dịch vụ được Checkmk Server giám sát
+* Alerts được gửi khi vượt ngưỡng
+* Dashboard hiển thị hiệu năng và sự cố
+* Logs tập trung để phân tích và xử lý sự cố
 
-1. Kết nối thiết bị mạng và máy chủ vào hệ thống giám sát
-2. Cấu hình SNMP hoặc agent cho từng node
-3. Thiết lập rule theo dõi hiệu năng và trạng thái dịch vụ
-4. Cấu hình ngưỡng cảnh báo
-5. Hiển thị dashboard và báo cáo
-6. Phân tích sự cố khi có downtime hoặc vượt ngưỡng
+# Sơ đồ mạng
 
-## Chức năng dự kiến
+* Ảnh sơ đồ mạng tổng quan
+* File cấu hình mạng
+* Mô tả subnet và IP tĩnh cho các node
 
-* Giám sát hạ tầng mạng
-* Giám sát máy chủ và dịch vụ
-* Theo dõi CPU / RAM / Disk / Bandwidth
-* Cảnh báo sự cố
-* Dashboard và báo cáo SLA
+# Cài đặt Checkmk
 
-## Ghi chú
+* Tạo máy chủ Checkmk trên VM hoặc server vật lý
+* Cấu hình các node mạng và dịch vụ
+* Cài đặt agent hoặc cấu hình SNMP cho thiết bị
+* Thiết lập rule giám sát và cảnh báo
 
-Tài liệu này là bản định hướng mở rộng cho project phục vụ bài tập lớn cuối kỳ.
+# Triển khai dịch vụ
+
+## Server và Agent
+
+* Thiết lập IP tĩnh cho server
+* Cài agent Checkmk hoặc SNMP trên server
+* Kiểm tra kết nối và dữ liệu giám sát
+
+# SOC / Giám sát & cảnh báo
+
+* Cấu hình dashboards, alerts, SLA
+* Thu thập logs từ tất cả các node
+* Phân tích và phản ứng sự cố theo thời gian thực
+
+# Kiểm tra & đánh giá
+
+* Kiểm tra kết nối và alert
+* Kiểm tra hiển thị dashboard và báo cáo
+* Đánh giá hiệu năng giám sát và SLA
+
+# Đang chuẩn bị
+
+> Thông tin và nội dung đang được cập nhật, sẽ bổ sung trong thời gian sớm nhất
+
