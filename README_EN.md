@@ -1,68 +1,60 @@
-# checkmk-network-monitoring
+# CHECKMK Network Monitoring System
 
-## Project Overview
+# Objectives
 
-This project builds an **enterprise-scale infrastructure and service monitoring system** using **Checkmk**, designed for a final-term major project.
+* Monitor network infrastructure and services
+* Detect incidents and send timely alerts
+* Analyze network and system performance
+* Support SLA reporting and incident response
 
-The system goes beyond simple network device monitoring by including servers, services, performance metrics, and real-time incident alerting.
+# System Components
 
-## System Workflow
+* **Checkmk Server**: Monitoring engine, rules, alerts, reports, SLA
+* **Network Devices**: Router, Switch, Firewall, Access Point
+* **Service Systems**: Web Server, Database, DNS, SSH, Mail, File Server
+* **Performance Metrics**: Bandwidth, Packet Errors, CPU, RAM, Disk, Process, Service
+* **Alert & Analysis**: Email / Telegram / Logs, downtime, root cause
 
-```text
-                          +----------------------+
-                          |    Administrator     |
-                          | Dashboard / Alerts   |
-                          +----------+-----------+
-                                     |
-                                     v
-                     +-----------------------------------+
-                     |          Checkmk Server           |
-                     | Monitoring + Rules + Alerts       |
-                     | Reports + SLA + Event Handling    |
-                     +----------+------------+-----------+
-                                |            |
-                    ------------             -------------
-                   /                                         \
-                  v                                           v
-        +---------------------+                    +----------------------+
-        | Network Devices     |                    |   Service Systems    |
-        | Router / Switch     |                    | Web / DB / DNS / SSH |
-        | Firewall / AP       |                    | Mail / File Server   |
-        +----------+----------+                    +----------+-----------+
-                   |                                          |
-                   v                                          v
-        +---------------------+                    +----------------------+
-        | Network Performance |                    | System Performance   |
-        | Bandwidth / Packet  |                    | CPU / RAM / Disk     |
-        | Interface Errors    |                    | Process / Service    |
-        +---------------------+                    +----------------------+
-                                \                /
-                                 \              /
-                                  v            v
-                         +---------------------------+
-                         | Alerting & Analysis       |
-                         | Email / Telegram / Logs   |
-                         | Downtime / Root Cause     |
-                         +---------------------------+
-```
+# Data Flow
 
-## Implementation Flow
+* Traffic and service status are monitored by Checkmk Server
+* Alerts are triggered when thresholds are exceeded
+* Dashboards display performance and incidents
+* Logs are centralized for analysis and incident handling
 
-1. Connect network devices and servers to the monitoring platform
-2. Configure SNMP or agents for each node
-3. Define monitoring rules for performance and service health
-4. Configure alert thresholds
-5. Build dashboards and SLA reports
-6. Analyze incidents during downtime or threshold breaches
+# Network Diagram
 
-## Planned Features
+* Overall network diagram image
+* Network configuration files
+* Description of subnets and static IPs for nodes
 
-* Network infrastructure monitoring
-* Server and service monitoring
-* CPU / RAM / Disk / Bandwidth tracking
-* Incident alerting
-* Dashboard and SLA reporting
+# Checkmk Installation
 
-## Notes
+* Create Checkmk server on VM or physical server
+* Configure network nodes and services
+* Install agent or configure SNMP on devices
+* Set up monitoring rules and alerts
 
-This document serves as an expanded project blueprint for a final-term academic project and will be updated with implementation details later.
+# Service Deployment
+
+## Servers and Agents
+
+* Set static IPs for servers
+* Install Checkmk agent or SNMP on servers
+* Verify connectivity and monitoring data
+
+# SOC / Monitoring & Alerts
+
+* Configure dashboards, alerts, and SLA
+* Collect logs from all nodes
+* Analyze and respond to incidents in real-time
+
+# Testing & Evaluation
+
+* Verify connectivity and alerts
+* Check dashboard displays and reports
+* Evaluate monitoring performance and SLA
+
+# Under Preparation
+
+> Information and content are being updated and will be added as soon as possible
